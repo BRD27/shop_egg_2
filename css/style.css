@@ -1,4 +1,4 @@
-/* Общие параметры */
+﻿/* Общие параметры */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@
     line-height: 52px;
     color: #EA8744;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 65px;
 }
 
 /*Шапка сайта, навигация*/
