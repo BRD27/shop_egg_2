@@ -1,4 +1,4 @@
-﻿/* Общие параметры */
+/* Общие параметры */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,13 @@
     font-family: "BIP", sans-serif;
     box-sizing: border-box;
 }
+html{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 .cnt{
     max-width: 1140px;
     margin: 0 auto;
-    overflow: hidden;
 }
 
 .title {
@@ -18,6 +21,16 @@
     color: #EA8744;
     text-align: center;
     padding-top: 65px;
+}
+
+button, 
+button:active, 
+button:focus,
+input,
+input:active
+input:focus {
+    outline: none;
+    border: none;
 }
 
 /*Шапка сайта, навигация*/
@@ -38,13 +51,17 @@
     font-size: 36px;
     line-height: 39px;
     color: #FB9848;
+    transition: 0.6s;
+}
+.header_logo:hover {
+    color: #ff5100;
 }
 .menu-toggler {
     display: none;
 }
 .navbar-menu a {
     margin-left: 30px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 19px;
     color: #425831;
     transition: 0.2s linear;
@@ -94,6 +111,16 @@
     outline: none;
     padding: 20px 60px;
     margin-top: 100px;
+    transition: 0.4s;
+}
+.fresh-farm__btn button:hover {
+    background: linear-gradient(90deg, #FFDA7A 16.04%, #FFA41C 100%);
+    
+}
+.fresh-farm__btn button:active {
+    background: linear-gradient(90deg, #FFBB54 16.04%, #FB9848 100%);
+    transform: translate(-2px, 2px);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.34);
 }
 .fresh-farm__image{
     flex: 0 0 45%;
@@ -162,13 +189,12 @@
     box-shadow: 3px 3px 9px 1px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
 }
-.item-product__img {
-}
 .item-product__img img {
     width: 100%;
 }
 .item-product__name{
     text-align: center;
+    padding: 0 15px;
 }
 .item-product__name, .item-product__btn button {
     font-size: calc(18px + 6 * ((100vw - 320px) / (1140 - 320)));
@@ -182,6 +208,9 @@
     border-radius: 40px;
     padding: 14px 65px;
 }
+.item-product__btn button:hover {
+    background: linear-gradient(90deg, #85E012 0%, #48930D 100%);
+}
 .item-product__btn.btn {
     position: relative;
     margin: 55px 0;
@@ -190,6 +219,10 @@
     position: absolute;
     top: -5px;
     left: -35px;
+    transition: 0.7s;
+}
+.item-product__btn button:hover > .item-product__egg {
+    left: 165px;
 }
 .product__bg {
     margin-top: 10px;
@@ -204,22 +237,43 @@
 }
 .form__form{
     padding: 160px 0 85px 0;
-    background: url(../img/form/leave_1.png) no-repeat 0 0, url(../img/form/leave_2.png) no-repeat 100% 100%;
+    background: url(../img/form/leave_1.png) no-repeat 0 -7%, url(../img/form/leave_2.png) no-repeat 100% 100%;
 }
 .form__input{
+    position: relative;
     padding: 27px 0 27px 40px;
     border-radius: 40px;
     width: 320px;
     background: transparent;
     border: 2px solid #99CA00;
+    margin-right: 45px;
     font-size: 18px;
     line-height: 25px;
     letter-spacing: 0.09em;
     color: #99CA00;
-    margin-right: 45px;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.34);
 }
-.form__input::placeholder{
+.form__input:focus + span, .form__input:valid + span {
+    top: 0;
+    left: 38px;
+    font-size: 14px;
+    padding: 1px;
+    background: #FCF8F8;
+}
+.placeholder{
+    display: inline-block;
+    position: relative;
+}
+.placeholder span {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    transition: 0.7s;
+    font-size: 24px;
+    letter-spacing: 0.01em;
     color: #99CA00;
+    pointer-events: none;
 }
 .form__btn{
     background: linear-gradient(90deg, #C5E50A 0%, #83A916 100%), #99CA00;
@@ -230,6 +284,15 @@
     line-height: 33px;
     letter-spacing: 0.01em;
     color: #FFFFFF;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.34);
+    transition: 0.4s;
+}
+.form__btn:hover {
+    background: linear-gradient(90deg, #85E012 0%, #48930D 100%);
+}
+.form__btn:active {
+    transform: translate(-2px, 2px);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.34);
 }
 .form__text{
     margin-top: 15px;
@@ -273,4 +336,10 @@
     align-items: center;
     flex: 0 0 20%;
     justify-content: space-between;
+}
+.footer__svg svg {
+    transition: 0.6s;
+}
+.footer__svg a:hover > svg {
+    fill: #ff4800;
 }
